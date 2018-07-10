@@ -1,5 +1,10 @@
 import axios from "axios";
 
+
+// require('dotenv').config();
+console.log(process.env.REACT_APP_NY_TIMES_API_KEY);
+
+
 export default {
   // Gets all articles
   getArticles: function() {
