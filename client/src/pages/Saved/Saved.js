@@ -8,7 +8,7 @@ import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import SaveBtn from "../../components/SaveBtn";
 
-class Search extends Component {
+class Saved extends Component {
   state = {
     articles: [],
     topic: "",
@@ -121,14 +121,19 @@ class Search extends Component {
                 {this.state.articles.map(article => (
                     <ListItem
                     key={article._id}>
-                  <strong>
-                    {article.headline}  --
-                  </strong>
-                <a target='_blank' href={article.link}>
-                  {article.link}
-                </a>
-                --
-                    {article.date}
+                    <h4>
+                    <strong>
+                      {article.headline}
+                    </strong>
+                    </h4>
+                    <ul>
+                    <a target='_blank' href={article.link}>
+                      {article.link}
+                    </a>
+                    </ul>
+                    <ul>
+                      {article.date}
+                    </ul>
                     <DeleteBtn onClick={() => this.deleteArticleSubmit(article._id)} />
                   </ListItem>
                 ))}
@@ -143,4 +148,4 @@ class Search extends Component {
   }
 }
 
-export default Search;
+export default Saved;
