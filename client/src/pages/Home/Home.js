@@ -83,7 +83,7 @@ class Search extends Component {
         <Row>
           <Col size="md-3">
             <Jumbotron>
-              <h1>Search Articles</h1>
+              <h1>Search</h1>
             </Jumbotron>
             <form>
               <Input
@@ -121,12 +121,16 @@ class Search extends Component {
                 {this.state.articles.map(article => (
                   <ListItem
                     key={article._id}>
-                    headline={article.headline.main} br
-                    link={article.web_url}
-                    date={article.pub_date}
-                  >
+                  <strong>
+                    {article.headline.main}  --
+                  </strong>
+                <a target='_blank' href={article.web_url}>
+									{article.web_url}
+								</a>
+                --
+                    {article.pub_date} --
                     <SaveBtn onClick={() => this.saveArticleSubmit(article.headline.main, article.web_url, article.pub_date)} />
-                  </ListItem>
+                  </ListItem> 
                 ))}
               </List>
             ) : (

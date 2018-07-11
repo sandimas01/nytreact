@@ -119,13 +119,17 @@ class Search extends Component {
             {this.state.articles.length ? (
               <List>
                 {this.state.articles.map(article => (
-                  <ListItem
+                    <ListItem
                     key={article._id}>
-                    headline={article.headline}
-                    link={article.web_url}
-                    date={article.pub_date}
-                  >
-                  <DeleteBtn onClick={() => this.deleteArticleSubmit(article._id)} />
+                  <strong>
+                    {article.headline}  --
+                  </strong>
+                <a target='_blank' href={article.link}>
+                  {article.link}
+                </a>
+                --
+                    {article.date} --
+                    <SaveBtn onClick={() => this.saveArticleSubmit(article.headline.main, article.web_url, article.pub_date)} />
                   </ListItem>
                 ))}
               </List>
