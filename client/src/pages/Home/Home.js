@@ -8,7 +8,7 @@ import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import SaveBtn from "../../components/SaveBtn";
 
-class Home extends Component {
+class Search extends Component {
   state = {
     articles: [],
     topic: "",
@@ -47,8 +47,8 @@ class Home extends Component {
         link: link,
         date: date
       })
-        .then(res => console.log("saved article"))
-        .catch(err => console.log(err));
+        .then(res => alert("saved article"))
+        .catch(err => alert("article alredy saved"));
   };
 
   // deleteArticleSubmit = id => {
@@ -87,19 +87,19 @@ class Home extends Component {
             </Jumbotron>
             <form>
               <Input
-                value={this.state.topic}
+                value={this.state.author}
                 onChange={this.handleInputChange}
                 name="topic"
                 placeholder="Topic (required)"
               />
               <Input
-                value={this.state.startYear}
+                value={this.state.author}
                 onChange={this.handleInputChange}
                 name="startYear"
                 placeholder="Start Year (required)"
               />
               <Input
-                value={this.state.endYear}
+                value={this.state.author}
                 onChange={this.handleInputChange}
                 name="endYear"
                 placeholder="End Year (required)"
@@ -121,7 +121,7 @@ class Home extends Component {
                 {this.state.articles.map(article => (
                   <ListItem
                     key={article._id}>
-                    headline={article.headline.main}
+                    headline={article.headline.main} br
                     link={article.web_url}
                     date={article.pub_date}
                   >
@@ -139,4 +139,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Search;

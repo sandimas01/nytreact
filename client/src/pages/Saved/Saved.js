@@ -8,7 +8,7 @@ import { List, ListItem } from "../../components/List";
 import { Input, TextArea, FormBtn } from "../../components/Form";
 import SaveBtn from "../../components/SaveBtn";
 
-class Home extends Component {
+class Search extends Component {
   state = {
     articles: [],
     topic: "",
@@ -121,7 +121,7 @@ class Home extends Component {
                 {this.state.articles.map(article => (
                   <ListItem
                     key={article._id}>
-                    headline={article.headline.main}
+                    headline={article.headline}
                     link={article.web_url}
                     date={article.pub_date}
                   >
@@ -139,4 +139,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default Search;
