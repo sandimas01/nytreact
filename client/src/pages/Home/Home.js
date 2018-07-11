@@ -81,9 +81,9 @@ class Search extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
+          <Col size="md-3">
             <Jumbotron>
-              <h1>What Articles Should I Read?</h1>
+              <h1>Search Articles</h1>
             </Jumbotron>
             <form>
               <Input
@@ -112,7 +112,7 @@ class Search extends Component {
               </FormBtn>
             </form>
           </Col>
-          <Col size="md-6 sm-12">
+          <Col size="md-9 sm-12">
             <Jumbotron>
               <h1>Articles On My List</h1>
             </Jumbotron>
