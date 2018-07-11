@@ -128,8 +128,8 @@ class Search extends Component {
                   {article.link}
                 </a>
                 --
-                    {article.date} --
-                    <SaveBtn onClick={() => this.saveArticleSubmit(article.headline.main, article.web_url, article.pub_date)} />
+                    {article.date}
+                    <DeleteBtn onClick={() => this.deleteArticleSubmit(article._id)} />
                   </ListItem>
                 ))}
               </List>
