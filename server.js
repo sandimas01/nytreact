@@ -4,11 +4,6 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
-// const dotenv = require('dotenv')
-// const APIKEY = process.env.API_KEY;
-// const API_KEY =`${process.env.API_KEY}`;
-// require('dotenv').config();
-// console.log(process.env.NY_TIMES_API_KEY);
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,6 +15,8 @@ if (process.env.NODE_ENV === "production") {
 // Add routes, both API and view
 app.use(routes);
 
+// Set up promises with mongoose
+mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactarticles");
 
